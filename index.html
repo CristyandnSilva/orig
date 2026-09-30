@@ -1,0 +1,797 @@
+<title>Manual de Marca OrigeTech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: capítulos empilhados numa coluna de leitura larga, navegação fixa no topo; peças de marca (swatches, lockups, cartões) ficam fora do tema e mostram a cor real. */
+:root{
+  /* tema da página */
+  --bg:#f3f6fb; --surface:#ffffff; --ink:#0b1730; --ink-2:#4a5973; --line:#d9e2ee;
+  --accent:#0e7490; --accent-soft:#e0f5fa; --wm-c:#16266b; --tech-c:#0891b2;
+  --nav-bg:rgba(243,246,251,.88);
+  /* marca (fixas, não mudam com o tema) */
+  --navy:#070f22; --navy-2:#0b1730; --raiz:#1e3a8a; --petroleo:#0891b2; --ciano:#22d3ee;
+  --nevoa:#eef3fa; --grafite:#45546e; --coral:#e5384a; --esmeralda:#0ea371;
+  --grad:linear-gradient(135deg,#1e3a8a 0%,#0891b2 55%,#22d3ee 100%);
+  /* tipo */
+  --f-display:"Sora",ui-sans-serif,system-ui,sans-serif;
+  --f-body:"Plus Jakarta Sans",ui-sans-serif,system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  /* forma: o canto "folha" vem da ponta do símbolo */
+  --leaf:28px 6px 28px 28px; --leaf-sm:16px 4px 16px 16px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#060d1d; --surface:#0b1730; --ink:#e8eef7; --ink-2:#9aaac3; --line:#1d2c4a;
+    --accent:#22d3ee; --accent-soft:#0d2a3d; --wm-c:#ffffff; --tech-c:#22d3ee;
+    --nav-bg:rgba(6,13,29,.86); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#060d1d; --surface:#0b1730; --ink:#e8eef7; --ink-2:#9aaac3; --line:#1d2c4a;
+  --accent:#22d3ee; --accent-soft:#0d2a3d; --wm-c:#ffffff; --tech-c:#22d3ee;
+  --nav-bg:rgba(6,13,29,.86); color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--f-display);line-height:1.1;margin:0;text-wrap:balance;letter-spacing:-.02em}
+p{margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+.mono{font-family:var(--f-mono)}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:clamp(17px,1.6vw,19px);color:var(--ink-2);max-width:62ch}
+.muted{color:var(--ink-2)}
+
+/* ---------- navegação ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--nav-bg);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:60px}
+.nav .lockup{font-size:12px;flex:none}
+.nav ol{list-style:none;margin:0;padding:0;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;min-width:0}
+.nav ol::-webkit-scrollbar{display:none}
+.nav ol a{display:block;white-space:nowrap;text-decoration:none;color:var(--ink-2);font-size:13.5px;font-weight:500;padding:6px 10px;border-radius:8px}
+.nav ol a:hover{color:var(--ink);background:var(--accent-soft)}
+.nav ol a b{font-family:var(--f-mono);font-weight:500;font-size:11px;color:var(--accent);margin-right:6px}
+
+/* ---------- lockup (símbolo + nome) ---------- */
+.lockup{display:inline-flex;align-items:center;gap:.55em;text-decoration:none}
+.lockup .sym{width:3.1em;height:3.1em;flex:none}
+.wm{display:inline-grid;font-family:var(--f-display);line-height:.92}
+.wm b{font-weight:800;font-size:1.7em;letter-spacing:.015em;color:var(--wm-c)}
+.wm i{font-style:normal;font-weight:500;font-size:.98em;letter-spacing:.46em;margin-right:-.46em;justify-self:end;color:var(--tech-c)}
+.wm.line{display:inline-flex;align-items:baseline;gap:0}
+.wm.line b{font-size:1.5em}
+.wm.line i{font-size:1.5em;letter-spacing:.015em;margin:0;font-weight:400}
+.on-dark{--wm-c:#ffffff;--tech-c:#22d3ee}
+.on-light{--wm-c:#16266b;--tech-c:#0891b2}
+.mono-navy{--wm-c:#070f22;--tech-c:#070f22;--s:#070f22;--n:#070f22}
+.mono-white{--wm-c:#ffffff;--tech-c:#ffffff;--s:#ffffff;--n:#ffffff}
+
+/* ---------- capa ---------- */
+.cover{background:var(--navy);color:#e8eef7;position:relative;overflow:hidden;isolation:isolate}
+.cover::before{content:"";position:absolute;inset:0;background:url("img/key-visual.jpg") right center/cover no-repeat;opacity:.9;z-index:-2}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#070f22 0%,rgba(7,15,34,.92) 38%,rgba(7,15,34,.35) 70%,rgba(7,15,34,.1) 100%);z-index:-1}
+.cover .wrap{padding-block:clamp(56px,9vw,112px) clamp(48px,7vw,88px);display:grid;gap:28px}
+.cover .lockup{font-size:clamp(15px,2vw,20px)}
+.cover h1{font-size:clamp(40px,6.4vw,78px);font-weight:700;max-width:12ch;color:#fff}
+.cover h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cover .slogan{font-family:var(--f-display);font-weight:300;font-size:clamp(19px,2.3vw,26px);color:#bfeaf5;max-width:26ch}
+.cover .meta{display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8ea3c4}
+.cover .meta span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:#22d3ee;margin-right:8px;vertical-align:1px}
+.draw path{stroke-dasharray:1;stroke-dashoffset:0;animation:draw 1.8s cubic-bezier(.6,0,.2,1) both}
+.draw path+path{animation-delay:1.1s;animation-duration:.5s}
+.draw circle{animation:pop .5s 1.6s cubic-bezier(.3,1.6,.5,1) both;transform-origin:153px 49px}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.draw path,.draw circle{animation:none}}
+
+/* ---------- capítulos ---------- */
+.chapter{padding-block:clamp(56px,8vw,104px);border-bottom:1px solid var(--line)}
+.ch-head{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-bottom:clamp(32px,4vw,48px)}
+.ch-head h2{font-size:clamp(30px,4vw,46px);font-weight:700}
+.ch-num{font-family:var(--f-mono);font-size:13px;color:var(--accent);letter-spacing:.1em}
+.grid{display:grid;gap:clamp(14px,2vw,22px)}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(20px,2.4vw,28px);min-width:0}
+.card h3{font-size:19px;font-weight:600;margin-bottom:8px}
+.sub{font-family:var(--f-display);font-size:20px;font-weight:600;margin:clamp(40px,5vw,56px) 0 18px}
+.caption{font-size:13.5px;color:var(--ink-2);margin-top:10px}
+
+/* essência */
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:40px 0 0}
+.pillars>div{background:var(--surface);padding:24px;min-width:0}
+.pillars dt{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.pillars dd{margin:0;font-family:var(--f-display);font-size:18px;font-weight:500;line-height:1.35}
+.statement{font-family:var(--f-display);font-weight:300;font-size:clamp(24px,3.2vw,38px);line-height:1.25;max-width:30ch;letter-spacing:-.02em}
+.statement b{font-weight:700;color:var(--accent)}
+
+/* logo */
+.stage{border-radius:18px;min-height:220px;display:grid;place-items:center;padding:40px 20px 32px;position:relative;border:1px solid var(--line);min-width:0}
+.stage .tag{position:absolute;left:16px;top:14px;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.stage .lockup{font-size:clamp(14px,1.6vw,18px)}
+.st-light{background:#ffffff;color:#45546e}
+.st-navy{background:#070f22;color:#8ea3c4;border-color:#070f22}
+.st-cyan{background:#0891b2;color:#e0f7fb;border-color:#0891b2}
+.st-nevoa{background:#eef3fa;color:#45546e}
+.appicon{width:112px;height:112px;border-radius:26px;background:#070f22;display:grid;place-items:center;box-shadow:0 12px 30px -12px rgba(7,15,34,.55)}
+.appicon svg{width:78px;height:78px}
+
+.anatomy{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.anat-fig{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--leaf);padding:clamp(20px,4vw,44px);aspect-ratio:1;max-width:100%}
+.anat-fig svg{width:100%;height:100%;display:block}
+.pin{position:absolute;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--bg);font:500 12px/26px var(--f-mono);text-align:center;transform:translate(-50%,-50%);box-shadow:0 0 0 4px var(--surface)}
+.anat-list{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.anat-list li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px}
+.anat-list .n{width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--bg);font:500 12px/26px var(--f-mono);text-align:center;margin-top:2px}
+.anat-list h4{font-size:17px;font-weight:600;margin-bottom:3px}
+.anat-list p{color:var(--ink-2);font-size:15px}
+
+.clear{display:grid;place-items:center;align-content:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:40px 16px;min-width:0}
+.clear-box{position:relative;padding:24px;outline:1.5px dashed var(--accent);background:repeating-linear-gradient(45deg,transparent 0 6px,var(--accent-soft) 6px 7px)}
+.clear-box .inner{background:#fff;padding:6px 10px}
+.clear-box .x{position:absolute;font:500 11px var(--f-mono);color:var(--accent)}
+.clear-box .x.t{top:4px;left:50%;transform:translateX(-50%)}
+.clear-box .x.l{left:7px;top:50%;transform:translateY(-50%)}
+.sizes{display:flex;flex-wrap:wrap;align-items:flex-end;gap:28px}
+.sizes figure{margin:0;display:grid;justify-items:center;gap:8px}
+.sizes figcaption{font:500 11.5px var(--f-mono);color:var(--ink-2)}
+
+.dont{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:14px}
+.dont figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;min-width:0}
+.dont .box{height:130px;display:grid;place-items:center;position:relative;background:#fff;overflow:hidden}
+.dont .box::after{content:"";position:absolute;inset:0;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#e5384a calc(50% - 1.5px) calc(50% + 1.5px),transparent calc(50% + 1.5px))}
+.dont .box .lockup{font-size:12px}
+.dont figcaption{padding:12px 14px;font-size:13.5px;color:var(--ink-2)}
+.dont figcaption b{display:block;color:var(--ink);font-weight:600;font-size:14px}
+
+.copyrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px}
+.btn{font:600 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:10px 16px;border-radius:10px;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent);color:#04121a}
+.toast{font:500 13px var(--f-mono);color:var(--accent);min-height:1.2em}
+
+/* cores */
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px}
+.sw{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--surface);min-width:0;cursor:pointer;text-align:left;padding:0;font:inherit;color:inherit}
+.sw .chip{height:128px;padding:14px 16px;display:flex;flex-direction:column;justify-content:space-between}
+.sw .chip .role{font:500 11px var(--f-mono);letter-spacing:.12em;text-transform:uppercase}
+.sw .chip .nm{font-family:var(--f-display);font-weight:600;font-size:21px;line-height:1.1}
+.sw dl{margin:0;padding:12px 16px 14px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 14px;font:400 12.5px var(--f-mono);color:var(--ink-2)}
+.sw dt{color:var(--ink);font-weight:500}
+.sw dd{margin:0;font-variant-numeric:tabular-nums}
+.ratio{display:flex;height:56px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.ratio span{display:flex;align-items:flex-end;padding:8px 10px;font:500 11.5px var(--f-mono);min-width:0;overflow:hidden;white-space:nowrap}
+.gradbar{height:120px;border-radius:var(--leaf);background:var(--grad);display:flex;align-items:flex-end;justify-content:space-between;padding:14px 18px;font:500 12px var(--f-mono);color:#fff}
+
+/* tipografia */
+.specimen{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:clamp(16px,3vw,40px);padding-block:26px;border-top:1px solid var(--line)}
+.specimen.last{border-bottom:1px solid var(--line)}
+.specimen .who h3{font-size:17px;font-weight:600}
+.specimen .who p{font:400 12.5px/1.6 var(--f-mono);color:var(--ink-2);margin-top:6px}
+.sp-display{font-family:var(--f-display);font-weight:800;font-size:clamp(34px,5vw,60px);line-height:1.02;letter-spacing:-.03em}
+.sp-body{font-family:var(--f-body);font-size:18px;line-height:1.65;max-width:58ch}
+.sp-mono{font-family:var(--f-mono);font-size:clamp(14px,1.8vw,19px);line-height:1.9;font-variant-numeric:tabular-nums}
+.sp-mono .k{color:var(--ink-2)}
+.scale{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+.scale th,.scale td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:baseline}
+.scale tr:last-child td{border-bottom:0}
+.scale th{font:500 11.5px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.scale td.m{font-family:var(--f-mono);font-size:12.5px;color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+
+/* elementos */
+.el-fig{height:170px;border-radius:14px;background:var(--navy);margin-bottom:18px;position:relative;overflow:hidden;display:grid;place-items:center}
+.el-fig svg{width:100%;height:100%}
+.rule-node{display:flex;align-items:center;width:78%}
+.rule-node i{flex:1;height:5px;border-radius:5px;background:var(--grad)}
+.rule-node b{width:18px;height:18px;border-radius:50%;background:#22d3ee;margin-left:-2px;flex:none}
+.nodes{list-style:none;margin:0;padding:0;display:grid;gap:10px;color:#dbe7f5;font-size:14.5px}
+.nodes li{display:flex;align-items:center;gap:10px}
+.nodes li::before{content:"";width:9px;height:9px;border-radius:50%;background:#22d3ee;box-shadow:0 0 0 4px rgba(34,211,238,.18);flex:none}
+.nodes li.live::before{animation:pulse 1.8s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,211,238,.6)}100%{box-shadow:0 0 0 12px rgba(34,211,238,0)}}
+@media (prefers-reduced-motion:reduce){.nodes li.live::before{animation:none}}
+.leafdemo{display:flex;gap:14px;align-items:center}
+.leafdemo div{width:92px;height:92px;border-radius:var(--leaf);background:url("img/linha-salao.jpg") center/cover}
+.leafdemo div+div{border-radius:var(--leaf-sm);width:64px;height:64px;background:var(--grad)}
+.icons{display:flex;flex-wrap:wrap;gap:14px}
+.icons span{width:56px;height:56px;border-radius:14px;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink);background:var(--bg)}
+.icons svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.dodont{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:15px}
+.dodont li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px}
+.dodont li::before{content:"✓";font-weight:700;color:var(--esmeralda)}
+.dodont li.no::before{content:"✕";color:var(--coral)}
+
+/* voz e slogan */
+.slogan-hero{border-radius:var(--leaf);background:var(--navy);color:#fff;padding:clamp(28px,5vw,60px);display:grid;gap:18px;position:relative;overflow:hidden;isolation:isolate}
+.slogan-hero::after{content:"";position:absolute;right:-60px;bottom:-80px;width:340px;height:340px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='36 33 130 130'%3E%3Cg fill='none' stroke='%2322d3ee' stroke-width='10' stroke-linecap='round' stroke-linejoin='miter' stroke-miterlimit='6'%3E%3Cpath d='M137 68 A51 51 0 1 1 84 51 C96 47 108 45 119 44 C106 57 72 64 66 92 C61 120 78 136 97 136 C117 136 129 117 126 96 C124 84 118 78 119 68 C120 58 132 52 146 50'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;opacity:.08;z-index:-1}
+.slogan-hero q{font-family:var(--f-display);font-weight:700;font-size:clamp(30px,5vw,58px);line-height:1.06;letter-spacing:-.03em;quotes:none;max-width:16ch}
+.slogan-hero q span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.slogan-hero p{color:#b8c6dc;max-width:58ch;font-size:16.5px}
+.sigs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px}
+.sig{border-left:3px solid var(--c);padding:6px 0 6px 16px}
+.sig small{font:500 11.5px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.sig p{font-family:var(--f-display);font-weight:600;font-size:20px;line-height:1.25;margin-top:4px}
+.traits{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px}
+.trait h3{font-size:18px}
+.trait .is{font-size:14.5px;color:var(--ink-2);margin-top:6px}
+.trait .isnt{font:400 12.5px var(--f-mono);color:var(--coral);margin-top:10px}
+.rewrite{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.rewrite>div{background:var(--surface);padding:18px 20px;min-width:0}
+.rewrite .h{font:500 11.5px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;padding-block:12px;background:var(--bg)}
+.rewrite .bad{color:var(--ink-2);text-decoration:line-through;text-decoration-color:rgba(229,56,74,.6)}
+.rewrite .good{font-weight:600}
+
+/* linhas editoriais */
+.lines{display:grid;gap:clamp(18px,2.4vw,28px)}
+.line{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.line:nth-child(even){grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+.line:nth-child(even) .ph{order:2}
+.line .ph{position:relative;min-height:300px;background:var(--navy) center/cover no-repeat}
+.line .ph .mix{position:absolute;left:16px;bottom:16px;background:rgba(7,15,34,.82);color:#fff;border-radius:12px;padding:10px 14px;font:500 12px var(--f-mono);letter-spacing:.06em;backdrop-filter:blur(6px)}
+.line .ph .mix b{display:block;font:700 26px var(--f-display);letter-spacing:-.02em;color:#22d3ee}
+.line .bd{padding:clamp(22px,3vw,36px);display:grid;gap:16px;align-content:start;min-width:0}
+.line .kicker{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pill{font:500 11.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:1px solid var(--line);color:var(--ink-2)}
+.pill.coral{background:#e5384a;border-color:#e5384a;color:#fff}
+.line h3{font-size:clamp(24px,2.8vw,32px);font-weight:700}
+.line .obj{color:var(--ink-2)}
+.line h4{font:500 11.5px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.pautas{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.pautas li{display:grid;grid-template-columns:14px minmax(0,1fr);gap:10px;font-size:15px;line-height:1.5}
+.pautas li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);margin-top:.6em}
+.fmt{display:flex;flex-wrap:wrap;gap:6px}
+.fmt span{font-size:13px;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:4px 9px}
+.cta{font-size:14.5px;border-top:1px dashed var(--line);padding-top:14px;color:var(--ink-2)}
+.cta b{color:var(--ink)}
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;min-height:108px;display:grid;align-content:start;gap:6px;min-width:0}
+.day .d{font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.day .p{font-size:12.5px;line-height:1.35;border-radius:8px;padding:6px 7px;background:var(--bg);border-left:3px solid var(--c)}
+.day .p b{display:block;font-size:11px;font-family:var(--f-mono);font-weight:500;color:var(--ink-2)}
+.c1{--c:#e5384a}.c2{--c:#22d3ee}.c3{--c:#3b62d6}
+
+/* aplicações */
+.bcards{display:flex;flex-wrap:wrap;gap:18px}
+.bcard{width:min(100%,340px);aspect-ratio:85/55;border-radius:14px;box-shadow:0 18px 40px -18px rgba(7,15,34,.45);position:relative;overflow:hidden}
+.bcard.front{background:#070f22;display:grid;place-items:center}
+.bcard.front::after{content:"";position:absolute;right:-30px;top:-30px;width:140px;height:140px;border-radius:50%;border:10px solid rgba(34,211,238,.12)}
+.bcard.front .lockup{font-size:15px}
+.bcard.back{background:#fff;color:#0b1730;padding:22px 24px;display:grid;align-content:space-between;border-radius:22px 6px 22px 22px;border:1px solid #e3e9f2}
+.bcard.back .nm{font:700 19px var(--f-display);letter-spacing:-.01em}
+.bcard.back .rl{font:500 10.5px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:#0891b2;margin-top:2px}
+.bcard.back ul{list-style:none;margin:0;padding:0;font-size:12.5px;display:grid;gap:3px;color:#45546e}
+.bcard.back ul b{color:#0b1730;font-weight:600}
+.bcard.back .mini{position:absolute;right:20px;top:20px;width:30px;height:30px}
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px}
+.post{aspect-ratio:1;border-radius:14px;overflow:hidden;position:relative;background:#070f22 center/cover;color:#fff;display:grid;align-content:end;padding:20px;isolation:isolate;min-width:0}
+.post::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,15,34,.15) 0%,rgba(7,15,34,.55) 45%,rgba(7,15,34,.95) 100%);z-index:-1}
+.post .tg{position:absolute;top:16px;left:16px;font:500 10.5px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;background:var(--c);color:#fff;padding:5px 9px;border-radius:999px}
+.post.c2 .tg{color:#04121a}
+.post h4{font:700 22px/1.12 var(--f-display);letter-spacing:-.02em}
+.post .ft{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:14px;font:500 11px var(--f-mono);color:#9fb3d1}
+.post .ft .lockup{font-size:7px}
+.post.num{background:#0b1730;align-content:center}
+.post.num .big{font:800 clamp(56px,8vw,84px)/1 var(--f-display);letter-spacing:-.04em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.post.num .big small{font-size:.36em;letter-spacing:-.01em}
+.post.num p{color:#b8c6dc;font-size:14px;margin-top:8px}
+.emailsig{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center;background:#fff;color:#0b1730;border-radius:14px;padding:20px;border:1px solid #d9e2ee;max-width:520px}
+.emailsig .sym{width:52px;height:52px}
+.emailsig .nm{font:700 16px var(--f-display)}
+.emailsig .rl{font-size:12.5px;color:#45546e}
+.emailsig .ct{font-size:12.5px;color:#45546e;margin-top:6px;border-top:1px solid #e5ebf3;padding-top:6px;overflow-wrap:anywhere}
+.emailsig .ct b{color:#0891b2;font-weight:600}
+.emailsig .sl{font:500 11px var(--f-mono);color:#0891b2;margin-top:4px}
+.avatars{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.avatar{width:96px;height:96px;border-radius:50%;background:#070f22;display:grid;place-items:center;flex:none}
+.avatar svg{width:62px;height:62px}
+.avatar.w{background:#fff;border:1px solid #d9e2ee}
+
+footer{padding-block:48px 64px;color:var(--ink-2);font-size:14px}
+footer .wrap{display:grid;gap:16px}
+footer .row{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center;justify-content:space-between}
+footer .contact{display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--f-mono);font-size:13px;color:var(--ink)}
+
+@media (max-width:860px){
+  .anatomy{grid-template-columns:minmax(0,1fr)}
+  .anat-fig{max-width:420px;width:100%}
+  .line,.line:nth-child(even){grid-template-columns:minmax(0,1fr)}
+  .line:nth-child(even) .ph{order:0}
+  .line .ph{min-height:240px}
+  .week{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .specimen{grid-template-columns:minmax(0,1fr)}
+  .rewrite{grid-template-columns:minmax(0,1fr)}
+  .rewrite .h:nth-child(2){display:none}
+}
+@media (max-width:560px){
+  .nav .lockup .wm{display:none}
+  .cover::after{background:linear-gradient(180deg,rgba(7,15,34,.5) 0%,rgba(7,15,34,.92) 55%,#070f22 100%)}
+}
+</style>
+
+<!-- Símbolo OrigeTech (redesenho vetorial da logo atual) — definido uma vez e reutilizado -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="og" gradientUnits="userSpaceOnUse" x1="45" y1="160" x2="160" y2="40">
+      <stop offset="0" stop-color="#1e3a8a"/><stop offset=".55" stop-color="#0891b2"/><stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <symbol id="sym" viewBox="36 33 130 130">
+      <g fill="none" style="stroke:var(--s,url(#og))" stroke-width="10" stroke-linecap="round">
+        <path stroke-linejoin="miter" stroke-miterlimit="6" d="M137 68 A51 51 0 1 1 84 51 C96 47 108 45 119 44 C106 57 72 64 66 92 C61 120 78 136 97 136 C117 136 129 117 126 96 C124 84 118 78 119 68 C120 58 132 52 146 50"/>
+        <path stroke-linejoin="miter" stroke-miterlimit="10" stroke-width="7" d="M101 70 L110 65 L118 72"/>
+      </g>
+      <circle cx="153" cy="49" r="9" style="fill:var(--n,#22d3ee)"/>
+    </symbol>
+    <!-- versão reduzida: sem o braço do "r" e com traço mais grosso, para 16–24 px -->
+    <symbol id="sym-s" viewBox="36 33 130 130">
+      <g fill="none" style="stroke:var(--s,url(#og))" stroke-width="13" stroke-linecap="round">
+        <path stroke-linejoin="miter" stroke-miterlimit="5" d="M137 68 A51 51 0 1 1 84 51 C96 47 108 45 119 44 C106 57 72 64 66 92 C61 120 78 136 97 136 C117 136 129 117 126 96 C124 84 118 78 119 68 C120 58 132 52 144 50"/>
+      </g>
+      <circle cx="153" cy="49" r="11" style="fill:var(--n,#22d3ee)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<nav class="nav" aria-label="Capítulos">
+  <div class="wrap">
+    <a class="lockup" href="#capa" aria-label="OrigeTech, voltar ao início"><svg class="sym"><use href="#sym"/></svg><span class="wm"><b>ORIGE</b><i>TECH</i></span></a>
+    <ol>
+      <li><a href="#essencia"><b>01</b>Essência</a></li>
+      <li><a href="#logo"><b>02</b>Logo</a></li>
+      <li><a href="#cores"><b>03</b>Cores</a></li>
+      <li><a href="#tipografia"><b>04</b>Tipografia</a></li>
+      <li><a href="#elementos"><b>05</b>Elementos</a></li>
+      <li><a href="#voz"><b>06</b>Voz e slogan</a></li>
+      <li><a href="#editorial"><b>07</b>Linhas editoriais</a></li>
+      <li><a href="#aplicacoes"><b>08</b>Aplicações</a></li>
+    </ol>
+  </div>
+</nav>
+
+<header class="cover on-dark" id="capa">
+  <div class="wrap">
+    <span class="lockup">
+      <svg class="sym draw" viewBox="36 33 130 130" aria-hidden="true">
+        <g fill="none" stroke="url(#og)" stroke-width="10" stroke-linecap="round">
+          <path pathLength="1" stroke-linejoin="miter" stroke-miterlimit="6" d="M137 68 A51 51 0 1 1 84 51 C96 47 108 45 119 44 C106 57 72 64 66 92 C61 120 78 136 97 136 C117 136 129 117 126 96 C124 84 118 78 119 68 C120 58 132 52 146 50"/>
+          <path pathLength="1" stroke-linejoin="miter" stroke-miterlimit="10" stroke-width="7" d="M101 70 L110 65 L118 72"/>
+        </g>
+        <circle cx="153" cy="49" r="9" fill="#22d3ee"/>
+      </svg>
+      <span class="wm"><b>ORIGE</b><i>TECH</i></span>
+    </span>
+    <h1>Manual de <em>marca</em></h1>
+    <p class="slogan">Tecnologia que nasce do seu negócio.</p>
+    <div class="meta"><span>Versão 1.0</span><span>Setembro de 2026</span><span>Inclui Reservas e Gestão</span></div>
+  </div>
+</header>
+
+<main>
+<!-- 01 ESSÊNCIA -->
+<section class="chapter" id="essencia">
+  <div class="wrap">
+    <div class="ch-head">
+      <span class="ch-num">01 · ESSÊNCIA</span>
+      <h2>O que a OrigeTech é antes de ser um logo</h2>
+      <p class="lead">A OrigeTech faz software para quem vive de operação: restaurante com salão cheio, revenda de software com cliente ligando. O nome vem de <b>origem</b>. Cada sistema começa pelo jeito que o negócio já trabalha e cresce a partir dali.</p>
+    </div>
+    <p class="statement">A gente parte da <b>origem</b> do seu negócio e conecta o que falta para ele <b>crescer</b>.</p>
+    <dl class="pillars">
+      <div><dt>Propósito</dt><dd>Tirar o dono de negócio do papel, da planilha e do improviso.</dd></div>
+      <div><dt>Posicionamento</dt><dd>Software feito por quem conhece a operação, com suporte de gente próxima.</dd></div>
+      <div><dt>Para quem</dt><dd>Restaurantes e redes (Reservas) · empresas de TI e revendas (Gestão).</dd></div>
+      <div><dt>Promessa</dt><dd>Menos tempo apagando incêndio, mais tempo atendendo cliente.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- 02 LOGO -->
+<section class="chapter" id="logo">
+  <div class="wrap">
+    <div class="ch-head">
+      <span class="ch-num">02 · LOGO</span>
+      <h2>Um traço só, da origem ao nó de rede</h2>
+      <p class="lead">O símbolo é a sua logo atual redesenhada em vetor: mesma leitura, traço mais regular e pronto para qualquer tamanho. O que faz ele falar de tecnologia é a linha contínua terminando num <b>nó</b>, igual a uma trilha de circuito chegando num ponto de conexão.</p>
+    </div>
+
+    <div class="anatomy">
+      <div class="anat-fig">
+        <svg aria-label="Símbolo OrigeTech"><use href="#sym"/></svg>
+        <span class="pin" style="left:13%;top:52%">1</span>
+        <span class="pin" style="left:66%;top:14%">2</span>
+        <span class="pin" style="left:55%;top:32%">3</span>
+        <span class="pin" style="left:88%;top:17%">4</span>
+      </div>
+      <ol class="anat-list">
+        <li><span class="n">1</span><div><h4>O anel: origem</h4><p>O "O" externo fecha o ciclo e dá o nome. É a base de onde tudo parte.</p></div></li>
+        <li><span class="n">2</span><div><h4>A folha: crescimento</h4><p>Onde o anel dobra para dentro, a linha forma uma ponta de folha. É o único canto vivo do símbolo e virou o canto "folha" usado em cards e fotos.</p></div></li>
+        <li><span class="n">3</span><div><h4>O broto: o "r" de Orige</h4><p>O "O" interno sobe e forma um "r". Lido junto com o anel, o símbolo diz "Or", o começo de Orige.</p></div></li>
+        <li><span class="n">4</span><div><h4>O nó: tecnologia</h4><p>A linha termina num ponto sólido, como uma trilha de placa chegando no terminal. É o sinal de conexão, dado e sistema. Vira bullet, marcador de status e loading.</p></div></li>
+      </ol>
+    </div>
+
+    <h3 class="sub">Versões</h3>
+    <div class="grid g3">
+      <div class="stage st-light on-light"><span class="tag">Principal · fundo claro</span><span class="lockup"><svg class="sym"><use href="#sym"/></svg><span class="wm"><b>ORIGE</b><i>TECH</i></span></span></div>
+      <div class="stage st-navy on-dark"><span class="tag">Negativa · fundo marinho</span><span class="lockup"><svg class="sym"><use href="#sym"/></svg><span class="wm"><b>ORIGE</b><i>TECH</i></span></span></div>
+      <div class="stage st-light mono-navy"><span class="tag">Monocromática · 1 cor</span><span class="lockup"><svg class="sym"><use href="#sym"/></svg><span class="wm"><b>ORIGE</b><i>TECH</i></span></span></div>
+      <div class="stage st-cyan mono-white"><span class="tag">Branca · sobre cor ou foto</span><span class="lockup"><svg class="sym"><use href="#sym"/></svg><span class="wm"><b>ORIGE</b><i>TECH</i></span></span></div>
+      <div class="stage st-nevoa on-light"><span class="tag">Horizontal · espaços baixos</span><span class="lockup" style="font-size:15px"><svg class="sym" style="width:2.3em;height:2.3em"><use href="#sym"/></svg><span class="wm line"><b>ORIGE</b><i>TECH</i></span></span></div>
+      <div class="stage st-light"><span class="tag">Ícone de app · avatar</span><span class="appicon"><svg><use href="#sym"/></svg></span></div>
+    </div>
+    <div class="copyrow">
+      <button class="btn primary" type="button" id="copySvg">Copiar SVG do símbolo</button>
+      <span class="toast" id="copyMsg" role="status" aria-live="polite"></span>
+    </div>
+
+    <h3 class="sub">Área de proteção e tamanho mínimo</h3>
+    <div class="grid g2">
+      <div class="clear">
+        <div class="clear-box on-light">
+          <span class="x t">x</span><span class="x l">x</span>
+          <div class="inner"><span class="lockup" style="font-size:15px"><svg class="sym"><use href="#sym"/></svg><span class="wm"><b>ORIGE</b><i>TECH</i></span></span></div>
+        </div>
+        <p class="caption">Nada entra na área tracejada. <b>x</b> = duas vezes o diâmetro do nó.</p>
+      </div>
+      <div class="card">
+        <div class="sizes">
+          <figure><svg width="64" height="64"><use href="#sym"/></svg><figcaption>64 px</figcaption></figure>
+          <figure><svg width="32" height="32"><use href="#sym"/></svg><figcaption>32 px</figcaption></figure>
+          <figure><svg width="24" height="24"><use href="#sym-s"/></svg><figcaption>24 px · reduzida</figcaption></figure>
+          <figure><svg width="16" height="16"><use href="#sym-s"/></svg><figcaption>16 px · favicon</figcaption></figure>
+        </div>
+        <p class="caption">Abaixo de 32 px use a versão reduzida: sem o braço do "r" e com traço mais grosso. Logo completo: mínimo de 96 px de largura na tela ou 25 mm no impresso.</p>
+      </div>
+    </div>
+
+    <h3 class="sub">Não faça</h3>
+    <div class="dont">
+      <figure><div class="box on-light"><span class="lockup" style="transform:scaleX(1.45)"><svg class="sym"><use href="#sym"/></svg><span class="wm"><b>ORIGE</b><i>TECH</i></span></span></div><figcaption><b>Esticar ou achatar</b>Redimensione sempre em proporção.</figcaption></figure>
+      <figure><div class="box on-light"><span class="lockup" style="transform:rotate(-18deg)"><svg class="sym"><use href="#sym"/></svg><span class="wm"><b>ORIGE</b><i>TECH</i></span></span></div><figcaption><b>Girar</b>O nó fica sempre no canto superior direito.</figcaption></figure>
+      <figure><div class="box on-light"><span class="lockup" style="filter:hue-rotate(150deg) saturate(1.6)"><svg class="sym"><use href="#sym"/></svg><span class="wm"><b>ORIGE</b><i>TECH</i></span></span></div><figcaption><b>Trocar as cores</b>Só o gradiente oficial, marinho ou branco.</figcaption></figure>
+      <figure><div class="box" style="background:url('img/linha-salao.jpg') center/cover"><span class="lockup on-light" style="filter:drop-shadow(0 3px 3px rgba(0,0,0,.8))"><svg class="sym"><use href="#sym"/></svg><span class="wm"><b>ORIGE</b><i>TECH</i></span></span></div><figcaption><b>Foto poluída e sombra</b>Sobre foto, use a versão branca numa área escura e calma.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 03 CORES -->
+<section class="chapter" id="cores">
+  <div class="wrap">
+    <div class="ch-head">
+      <span class="ch-num">03 · CORES</span>
+      <h2>Marinho de base, ciano de sinal</h2>
+      <p class="lead">A paleta sai do próprio gradiente do símbolo. O marinho sustenta, o ciano aponta o que importa. Coral e esmeralda existem só para diferenciar os produtos. Clique numa cor para copiar o HEX.</p>
+    </div>
+    <div class="swatches" id="swatches">
+      <button class="sw" type="button" data-hex="#070F22"><div class="chip" style="background:#070f22;color:#e8eef7"><span class="role">Base</span><span class="nm">Marinho Origem</span></div><dl><dt>HEX</dt><dd>#070F22</dd><dt>RGB</dt><dd>7 15 34</dd><dt>CMYK</dt><dd>80 56 0 87</dd></dl></button>
+      <button class="sw" type="button" data-hex="#1E3A8A"><div class="chip" style="background:#1e3a8a;color:#fff"><span class="role">Primária</span><span class="nm">Azul Raiz</span></div><dl><dt>HEX</dt><dd>#1E3A8A</dd><dt>RGB</dt><dd>30 58 138</dd><dt>CMYK</dt><dd>78 58 0 46</dd></dl></button>
+      <button class="sw" type="button" data-hex="#0891B2"><div class="chip" style="background:#0891b2;color:#fff"><span class="role">Primária</span><span class="nm">Petróleo</span></div><dl><dt>HEX</dt><dd>#0891B2</dd><dt>RGB</dt><dd>8 145 178</dd><dt>CMYK</dt><dd>96 18 0 30</dd></dl></button>
+      <button class="sw" type="button" data-hex="#22D3EE"><div class="chip" style="background:#22d3ee;color:#04121a"><span class="role">Destaque</span><span class="nm">Ciano Sinal</span></div><dl><dt>HEX</dt><dd>#22D3EE</dd><dt>RGB</dt><dd>34 211 238</dd><dt>CMYK</dt><dd>86 11 0 7</dd></dl></button>
+      <button class="sw" type="button" data-hex="#EEF3FA"><div class="chip" style="background:#eef3fa;color:#0b1730;box-shadow:inset 0 -1px 0 #d9e2ee"><span class="role">Fundo claro</span><span class="nm">Névoa</span></div><dl><dt>HEX</dt><dd>#EEF3FA</dd><dt>RGB</dt><dd>238 243 250</dd><dt>CMYK</dt><dd>5 3 0 2</dd></dl></button>
+      <button class="sw" type="button" data-hex="#45546E"><div class="chip" style="background:#45546e;color:#fff"><span class="role">Texto de apoio</span><span class="nm">Grafite</span></div><dl><dt>HEX</dt><dd>#45546E</dd><dt>RGB</dt><dd>69 84 110</dd><dt>CMYK</dt><dd>37 24 0 57</dd></dl></button>
+      <button class="sw" type="button" data-hex="#E5384A"><div class="chip" style="background:#e5384a;color:#fff"><span class="role">Produto · Reservas</span><span class="nm">Coral Reservas</span></div><dl><dt>HEX</dt><dd>#E5384A</dd><dt>RGB</dt><dd>229 56 74</dd><dt>CMYK</dt><dd>0 76 68 10</dd></dl></button>
+      <button class="sw" type="button" data-hex="#0EA371"><div class="chip" style="background:#0ea371;color:#fff"><span class="role">Produto · Gestão</span><span class="nm">Esmeralda Gestão</span></div><dl><dt>HEX</dt><dd>#0EA371</dd><dt>RGB</dt><dd>14 163 113</dd><dt>CMYK</dt><dd>91 0 31 36</dd></dl></button>
+    </div>
+    <p class="caption">CMYK convertido direto do RGB, é só referência. Para gráfica, peça prova de cor antes de rodar a tiragem.</p>
+
+    <h3 class="sub">Proporção de uso</h3>
+    <div class="ratio" role="img" aria-label="Proporção: 55% marinho e névoa, 25% azul raiz e petróleo, 12% ciano, 8% cor de produto">
+      <span style="flex:55;background:#070f22;color:#8ea3c4">55% Marinho + Névoa</span>
+      <span style="flex:25;background:#1e3a8a;color:#cfe0ff">25% Raiz + Petróleo</span>
+      <span style="flex:12;background:#22d3ee;color:#04121a">12% Ciano</span>
+      <span style="flex:8;background:#e5384a;color:#fff">8%</span>
+    </div>
+    <p class="caption">A cor de produto (coral ou esmeralda) nunca passa de 10% da peça e nunca aparece junto com a outra.</p>
+
+    <h3 class="sub">Gradiente Origem</h3>
+    <div class="gradbar"><span>#1E3A8A</span><span>#0891B2</span><span>#22D3EE</span></div>
+    <p class="caption">135°, nesta ordem. Use no símbolo, em faixas de destaque e em números grandes. Nunca em texto corrido.</p>
+  </div>
+</section>
+
+<!-- 04 TIPOGRAFIA -->
+<section class="chapter" id="tipografia">
+  <div class="wrap">
+    <div class="ch-head">
+      <span class="ch-num">04 · TIPOGRAFIA</span>
+      <h2>Três famílias, cada uma com uma função</h2>
+      <p class="lead">Todas gratuitas no Google Fonts, as mesmas do site origetech.com.br. Instale no computador e no Canva (Marca → Fontes) para as peças saírem iguais.</p>
+    </div>
+    <div class="specimen">
+      <div class="who"><h3>Sora</h3><p>Títulos, números grandes, logo<br>Pesos 300 · 600 · 700 · 800</p></div>
+      <p class="sp-display">Mesa certa,<br>na hora certa.</p>
+    </div>
+    <div class="specimen">
+      <div class="who"><h3>Plus Jakarta Sans</h3><p>Texto, interface, e-mail<br>Pesos 400 · 500 · 600 · 700</p></div>
+      <p class="sp-body">O cliente reserva pelo celular em três toques, recebe a confirmação no WhatsApp e um lembrete duas horas antes. Você acompanha o salão inteiro num painel só, com a fila andando sozinha.</p>
+    </div>
+    <div class="specimen last">
+      <div class="who"><h3>JetBrains Mono</h3><p>Dados, rótulos, etiquetas<br>Pesos 400 · 500</p></div>
+      <p class="sp-mono"><span class="k">OCUPAÇÃO</span> 94% · <span class="k">RESERVAS</span> 128 · <span class="k">FILA</span> 00:12<br><span class="k">SÁB 04/10</span> 20:30 · MESA 14 · 4 PESSOAS</p>
+    </div>
+
+    <h3 class="sub">Escala</h3>
+    <div class="tbl">
+      <table class="scale">
+        <thead><tr><th>Nível</th><th>Exemplo</th><th>Especificação</th></tr></thead>
+        <tbody>
+          <tr><td>Display</td><td style="font:800 34px/1.05 var(--f-display);letter-spacing:-.03em">Casa cheia</td><td class="m">Sora 800 · 56/60 · -3%</td></tr>
+          <tr><td>Título 1</td><td style="font:700 28px/1.1 var(--f-display);letter-spacing:-.02em">Sua fila sem papel</td><td class="m">Sora 700 · 40/44 · -2%</td></tr>
+          <tr><td>Título 2</td><td style="font:600 21px/1.2 var(--f-display)">Reservas por unidade</td><td class="m">Sora 600 · 28/34</td></tr>
+          <tr><td>Texto</td><td style="font:400 16px/1.6 var(--f-body)">Confirmação automática no WhatsApp.</td><td class="m">Jakarta 400 · 16/26</td></tr>
+          <tr><td>Rótulo</td><td style="font:500 12px var(--f-mono);letter-spacing:.14em;text-transform:uppercase">Linha editorial</td><td class="m">Mono 500 · 12 · +14% · CAIXA ALTA</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 05 ELEMENTOS -->
+<section class="chapter" id="elementos">
+  <div class="wrap">
+    <div class="ch-head">
+      <span class="ch-num">05 · ELEMENTOS DE MARCA</span>
+      <h2>Peças tiradas do próprio símbolo</h2>
+      <p class="lead">Quatro elementos repetidos com disciplina fazem uma peça parecer OrigeTech mesmo sem logo. Todos saem do desenho do símbolo.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="el-fig"><div class="rule-node"><i></i><b></b></div></div>
+        <h3>O traço com nó</h3>
+        <p class="muted">Divisor de seção, linha do tempo, sublinhado de título. Sempre com ponta arredondada e terminando num nó ciano. A espessura é 7,7% da altura do símbolo usado na peça.</p>
+      </div>
+      <div class="card">
+        <div class="el-fig" style="padding:24px 28px;place-items:center start">
+          <ul class="nodes"><li>Reserva confirmada</li><li>Lembrete enviado</li><li class="live">Mesa 14 liberada agora</li></ul>
+        </div>
+        <h3>O nó</h3>
+        <p class="muted">Vira bullet de lista, marcador de status e indicador "ao vivo" (pulsando). Um nó por informação. Não use outro formato de bullet.</p>
+      </div>
+      <div class="card">
+        <div class="el-fig">
+          <svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><pattern id="trace" width="80" height="80" patternUnits="userSpaceOnUse">
+              <path d="M0 20 H30 L50 40 H80 M20 80 V60 L40 40 M60 0 V20 L70 30" fill="none" stroke="#22d3ee" stroke-opacity=".35" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="30" cy="20" r="3.2" fill="#22d3ee" fill-opacity=".7"/><circle cx="40" cy="40" r="3.2" fill="#22d3ee" fill-opacity=".7"/><circle cx="70" cy="30" r="3.2" fill="#22d3ee" fill-opacity=".7"/>
+            </pattern><radialGradient id="fade" cx=".75" cy=".3" r=".8"><stop offset="0" stop-color="#070f22" stop-opacity="0"/><stop offset="1" stop-color="#070f22"/></radialGradient></defs>
+            <rect width="400" height="170" fill="url(#trace)"/><rect width="400" height="170" fill="url(#fade)"/>
+          </svg>
+        </div>
+        <h3>Trilha de circuito</h3>
+        <p class="muted">Textura de fundo com trilhas em 0°, 45° e 90° e nós nas junções. Opacidade máxima de 35%, sempre sumindo em direção ao texto. É o elemento que mais puxa para tecnologia.</p>
+      </div>
+      <div class="card">
+        <div class="el-fig" style="background:#eef3fa"><div class="leafdemo"><div></div><div></div></div></div>
+        <h3>Canto folha</h3>
+        <p class="muted">Cards, fotos e botões grandes têm três cantos redondos e o superior direito quase reto, a mesma ponta da folha do símbolo. <span class="mono" style="font-size:13px">border-radius: 28px 6px 28px 28px</span></p>
+      </div>
+    </div>
+
+    <h3 class="sub">Ícones e fotografia</h3>
+    <div class="grid g2">
+      <div class="card">
+        <div class="icons" aria-hidden="true">
+          <span><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17M9 15l2 2 4-4"/></svg></span>
+          <span><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19.5c.6-3.2 2.9-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="18" cy="9.5" r="2.2"/><path d="M16.5 14.2c2 .2 3.5 1.7 4 4.3"/></svg></span>
+          <span><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/><circle cx="16" cy="9.5" r="1.6"/></svg></span>
+          <span><svg viewBox="0 0 24 24"><path d="M4.5 18.5 5.8 15A8 8 0 1 1 9 18.2Z"/><path d="M9 11h6M9 14h4"/></svg></span>
+          <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>
+          <span><svg viewBox="0 0 24 24"><path d="M6 13a6 6 0 0 1 12 0v1H6zM4 17h16M9 20.5h6"/><circle cx="12" cy="5" r="1.4"/></svg></span>
+        </div>
+        <p class="caption">Contorno de 1,75 px numa grade de 24 px, pontas e juntas arredondadas, sem preenchimento. Quando o ícone tiver um ponto de destaque, ele é um nó.</p>
+      </div>
+      <div class="card">
+        <ul class="dodont">
+          <li>Gente real trabalhando: salão cheio, recepção, cozinha, escritório.</li>
+          <li>Luz quente no ambiente e sombra levemente azulada.</li>
+          <li>Telas com interface desfocada ou sem texto legível.</li>
+          <li class="no">Aperto de mão, gente apontando para gráfico, banco de imagem posado.</li>
+          <li class="no">Tela com texto inventado ou marca de outro sistema.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 VOZ E SLOGAN -->
+<section class="chapter" id="voz">
+  <div class="wrap">
+    <div class="ch-head">
+      <span class="ch-num">06 · VOZ E SLOGAN</span>
+      <h2>Fala como quem já trabalhou no balcão</h2>
+    </div>
+    <div class="slogan-hero">
+      <span class="eyebrow" style="color:#22d3ee">Slogan</span>
+      <q><span>Tecnologia</span> que nasce do seu negócio.</q>
+      <p>"Orige" vem de origem. A frase diz o que a empresa faz de diferente: não empurra um sistema pronto, parte de como a operação do cliente já funciona. Serve para os dois produtos e para a marca-mãe.</p>
+    </div>
+
+    <h3 class="sub">Assinaturas</h3>
+    <div class="sigs">
+      <div class="sig" style="--c:#22d3ee"><small>Curta · rodapé e redes</small><p>Da origem ao crescimento.</p></div>
+      <div class="sig" style="--c:#e5384a"><small>Reservas</small><p>Mesa certa, na hora certa.</p></div>
+      <div class="sig" style="--c:#0ea371"><small>Gestão</small><p>Sua revenda inteira num lugar só.</p></div>
+    </div>
+
+    <h3 class="sub">Personalidade</h3>
+    <div class="traits">
+      <div class="card trait"><h3>Direta</h3><p class="is">Frase curta, verbo na frente, número quando tiver.</p><p class="isnt">não é: seca ou apressada</p></div>
+      <div class="card trait"><h3>Próxima</h3><p class="is">Trata por "você", fala a língua do salão e do suporte.</p><p class="isnt">não é: informal demais, gíria</p></div>
+      <div class="card trait"><h3>Técnica sem jargão</h3><p class="is">Explica o benefício. O nome da tecnologia vem depois, se vier.</p><p class="isnt">não é: "solução robusta e escalável"</p></div>
+      <div class="card trait"><h3>Segura</h3><p class="is">Promete o que entrega e mostra o dado real.</p><p class="isnt">não é: "revolucionário", "o melhor do Brasil"</p></div>
+    </div>
+
+    <h3 class="sub">Reescrevendo</h3>
+    <div class="rewrite">
+      <div class="h">Em vez de</div><div class="h">Escreva</div>
+      <div class="bad">Soluções inovadoras de gestão para impulsionar o seu negócio.</div><div class="good">Reservas, fila e salão num painel só.</div>
+      <div class="bad">Otimize a experiência do seu cliente com nossa plataforma.</div><div class="good">Seu cliente reserva em três toques, sem baixar app.</div>
+      <div class="bad">Entre em contato para mais informações.</div><div class="good">Chama no WhatsApp que a gente te mostra funcionando.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 LINHAS EDITORIAIS -->
+<section class="chapter" id="editorial">
+  <div class="wrap">
+    <div class="ch-head">
+      <span class="ch-num">07 · LINHAS EDITORIAIS · RESERVAS</span>
+      <h2>Três assuntos, um calendário</h2>
+      <p class="lead">Todo conteúdo do Reservas cabe em uma destas três linhas. Cada uma tem um trabalho: <b>ensinar</b>, <b>mostrar</b> e <b>provar</b>. Juntas, levam o dono do restaurante de "tenho um problema" até "quero ver funcionando".</p>
+    </div>
+
+    <div class="lines">
+      <article class="line">
+        <div class="ph" style="background-image:url('img/linha-salao.jpg')" role="img" aria-label="Recepcionista confirmando a reserva de um casal no tablet"><div class="mix"><b>40%</b>do conteúdo</div></div>
+        <div class="bd">
+          <div class="kicker"><span class="pill coral">Reservas</span><span class="pill">Ensinar</span><span class="pill">Topo de funil</span></div>
+          <h3>Salão Cheio</h3>
+          <p class="obj">Bastidores da operação. Mostra que a OrigeTech entende de salão antes de falar de software. Fala com o dono e o gerente sobre no-show, giro de mesa, fila e escala de sábado.</p>
+          <div><h4>Pautas</h4><ul class="pautas">
+            <li>Quanto custa uma mesa vazia no sábado? A conta com 4 no-shows por noite.</li>
+            <li>Fila no papel ou no celular: o que o cliente sente em 20 minutos de espera.</li>
+            <li>Três ajustes de giro que liberam um turno a mais sem contratar ninguém.</li>
+          </ul></div>
+          <div><h4>Formatos</h4><div class="fmt"><span>Carrossel de dicas</span><span>Reels de 30 s</span><span>Checklist em PDF para lead</span></div></div>
+          <p class="cta"><b>Chamada:</b> "Salva pra mostrar pro seu gerente."</p>
+        </div>
+      </article>
+
+      <article class="line">
+        <div class="ph" style="background-image:url('img/linha-mesa.jpg')" role="img" aria-label="Cliente segurando o celular com a reserva confirmada na mesa do restaurante"><div class="mix"><b>35%</b>do conteúdo</div></div>
+        <div class="bd">
+          <div class="kicker"><span class="pill coral">Reservas</span><span class="pill">Mostrar</span><span class="pill">Meio de funil</span></div>
+          <h3>Do Outro Lado da Mesa</h3>
+          <p class="obj">A experiência pelos olhos do cliente final. Mostra o sistema funcionando: reserva em três toques, confirmação no WhatsApp, lembrete, fila virtual, mesa escolhida no mapa.</p>
+          <div><h4>Pautas</h4><ul class="pautas">
+            <li>Reserva feita em três toques, sem baixar aplicativo (gravação de tela real).</li>
+            <li>O lembrete que chega duas horas antes e salva a noite do restaurante.</li>
+            <li>Espera no bar, não na porta: a fila virtual por dentro.</li>
+          </ul></div>
+          <div><h4>Formatos</h4><div class="fmt"><span>Gravação de tela no celular</span><span>Story com enquete</span><span>Depoimento de cliente</span></div></div>
+          <p class="cta"><b>Chamada:</b> "Quer isso na sua casa? Chama no WhatsApp."</p>
+        </div>
+      </article>
+
+      <article class="line">
+        <div class="ph" style="background-image:url('img/linha-numeros.jpg')" role="img" aria-label="Dono de restaurante analisando o painel de dados no notebook"><div class="mix"><b>25%</b>do conteúdo</div></div>
+        <div class="bd">
+          <div class="kicker"><span class="pill coral">Reservas</span><span class="pill">Provar</span><span class="pill">Fundo de funil</span></div>
+          <h3>Números da Casa</h3>
+          <p class="obj">Prova com dado. Resultados de clientes, antes e depois, o que o painel mostra no fim do mês. É a linha que converte, por isso só publica número tirado do relatório real.</p>
+          <div><h4>Pautas</h4><ul class="pautas">
+            <li>Case: uma rede com 4 unidades e uma agenda só.</li>
+            <li>O relatório do mês: horário de pico, ocupação e no-show de uma casa real (com autorização).</li>
+            <li>Antes e depois da fila virtual: tempo médio de espera medido no painel.</li>
+          </ul></div>
+          <div><h4>Formatos</h4><div class="fmt"><span>Card de número grande</span><span>Mini case em carrossel</span><span>Vídeo curto com o dono</span></div></div>
+          <p class="cta"><b>Chamada:</b> "Peça uma demonstração com os dados da sua casa."</p>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="sub">Semana-modelo</h3>
+    <div class="week">
+      <div class="day"><span class="d">Seg</span><div class="p c1"><b>Salão Cheio</b>Carrossel de dica</div></div>
+      <div class="day"><span class="d">Ter</span><div class="p c2"><b>Outro Lado</b>Story com enquete</div></div>
+      <div class="day"><span class="d">Qua</span><div class="p c2"><b>Outro Lado</b>Reels: tela do celular</div></div>
+      <div class="day"><span class="d">Qui</span><div class="p c1"><b>Salão Cheio</b>Reels: erro comum</div></div>
+      <div class="day"><span class="d">Sex</span><div class="p c3"><b>Números</b>Card ou mini case</div></div>
+      <div class="day"><span class="d">Sáb</span><div class="p c1"><b>Salão Cheio</b>Story dos bastidores</div></div>
+      <div class="day"><span class="d">Dom</span><span class="muted" style="font-size:12.5px">Folga. Responder comentários.</span></div>
+    </div>
+    <p class="caption">5 posts e 2 stories por semana. Para tráfego pago, use as peças de "Do Outro Lado da Mesa" para atrair e as de "Números da Casa" no remarketing.</p>
+  </div>
+</section>
+
+<!-- 08 APLICAÇÕES -->
+<section class="chapter" id="aplicacoes">
+  <div class="wrap">
+    <div class="ch-head">
+      <span class="ch-num">08 · APLICAÇÕES</span>
+      <h2>A marca em uso</h2>
+    </div>
+
+    <h3 class="sub" style="margin-top:0">Posts das linhas editoriais</h3>
+    <div class="posts">
+      <div class="post c1" style="background-image:url('img/linha-salao.jpg')"><span class="tg">Salão Cheio</span><h4>Quanto custa uma mesa vazia no sábado?</h4><div class="ft"><span>Arraste para o lado →</span><span class="lockup on-dark"><svg class="sym"><use href="#sym"/></svg><span class="wm"><b>ORIGE</b><i>TECH</i></span></span></div></div>
+      <div class="post c2" style="background-image:url('img/linha-mesa.jpg')"><span class="tg">Do Outro Lado da Mesa</span><h4>Reservou em três toques. Sem baixar app.</h4><div class="ft"><span>origetech.com.br</span><span class="lockup on-dark"><svg class="sym"><use href="#sym"/></svg><span class="wm"><b>ORIGE</b><i>TECH</i></span></span></div></div>
+      <div class="post num c3"><span class="tg">Números da Casa</span><div class="big">4<small> unidades</small></div><p>Uma rede, uma agenda só. Todas as reservas no mesmo painel.</p><div class="ft"><span>Case real</span><span class="lockup on-dark"><svg class="sym"><use href="#sym"/></svg><span class="wm"><b>ORIGE</b><i>TECH</i></span></span></div></div>
+    </div>
+
+    <h3 class="sub">Cartão de visita · 85 × 55 mm</h3>
+    <div class="bcards">
+      <div class="bcard front on-dark"><span class="lockup"><svg class="sym"><use href="#sym"/></svg><span class="wm"><b>ORIGE</b><i>TECH</i></span></span></div>
+      <div class="bcard back">
+        <svg class="mini"><use href="#sym"/></svg>
+        <div><div class="nm">Cristyan Silva</div><div class="rl">OrigeTech</div></div>
+        <ul><li><b>(48) 98458-4501</b> · WhatsApp</li><li>cristyan@origetech.com.br</li><li>origetech.com.br</li></ul>
+      </div>
+    </div>
+
+    <h3 class="sub">Assinatura de e-mail</h3>
+    <div class="emailsig">
+      <svg class="sym"><use href="#sym"/></svg>
+      <div>
+        <div class="nm">Cristyan Silva</div>
+        <div class="rl">OrigeTech · Reservas e Gestão</div>
+        <div class="ct"><b>(48) 98458-4501</b> · cristyan@origetech.com.br · origetech.com.br</div>
+        <div class="sl">Tecnologia que nasce do seu negócio.</div>
+      </div>
+    </div>
+
+    <h3 class="sub">Avatar de redes sociais</h3>
+    <div class="avatars">
+      <div class="avatar"><svg><use href="#sym"/></svg></div>
+      <div class="avatar w"><svg><use href="#sym"/></svg></div>
+      <p class="muted" style="max-width:40ch;font-size:14.5px">Símbolo centralizado ocupando 65% do diâmetro. Fundo marinho é o padrão. O branco é para plataformas com tema escuro.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <span class="lockup" style="font-size:12px"><svg class="sym"><use href="#sym"/></svg><span class="wm"><b>ORIGE</b><i>TECH</i></span></span>
+      <div class="contact"><span>(48) 98458-4501</span><span>cristyan@origetech.com.br</span><span>origetech.com.br</span></div>
+    </div>
+    <p>Manual de Marca OrigeTech · versão 1.0 · setembro de 2026. As fotos das linhas editoriais e o visual da capa foram gerados por IA no Canva e servem como direção de arte. Troque por fotos reais dos clientes assim que tiver.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="36 33 130 130"><defs><linearGradient id="og" gradientUnits="userSpaceOnUse" x1="45" y1="160" x2="160" y2="40"><stop offset="0" stop-color="#1e3a8a"/><stop offset=".55" stop-color="#0891b2"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><g fill="none" stroke="url(#og)" stroke-width="10" stroke-linecap="round"><path stroke-linejoin="miter" stroke-miterlimit="6" d="M137 68 A51 51 0 1 1 84 51 C96 47 108 45 119 44 C106 57 72 64 66 92 C61 120 78 136 97 136 C117 136 129 117 126 96 C124 84 118 78 119 68 C120 58 132 52 146 50"/><path stroke-linejoin="miter" stroke-miterlimit="10" stroke-width="7" d="M101 70 L110 65 L118 72"/></g><circle cx="153" cy="49" r="9" fill="#22d3ee"/></svg>';
+  var msg = document.getElementById('copyMsg'), t;
+  function say(text){ msg.textContent = text; clearTimeout(t); t = setTimeout(function(){ msg.textContent = ''; }, 2600); }
+  function fallback(text){
+    var ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select();
+    var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta); return ok;
+  }
+  function copy(text, done){
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ done(fallback(text)); });
+    } else { done(fallback(text)); }
+  }
+  document.getElementById('copySvg').addEventListener('click', function(){
+    copy(svg, function(ok){ say(ok ? 'SVG copiado. Cole num arquivo .svg, no Figma ou no Canva.' : 'Não deu para copiar neste navegador.'); });
+  });
+  document.getElementById('swatches').addEventListener('click', function(e){
+    var b = e.target.closest('.sw'); if (!b) return;
+    var hex = b.getAttribute('data-hex'), nm = b.querySelector('.nm');
+    var old = nm.getAttribute('data-n') || nm.textContent;
+    copy(hex, function(ok){
+      nm.setAttribute('data-n', old); nm.textContent = ok ? hex + ' copiado' : hex;
+      setTimeout(function(){ nm.textContent = old; }, 1400);
+    });
+  });
+})();
+</script>
